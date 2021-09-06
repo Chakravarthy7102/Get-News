@@ -1,6 +1,8 @@
 package com.example.getnews;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.browser.customtabs.CustomTabsIntent;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -46,9 +48,14 @@ public class NewsDetailsActivity extends AppCompatActivity {
         newsDetailBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
+               // Intent i = new Intent(Intent.ACTION_VIEW);
+                CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+                builder.setToolbarColor(ContextCompat.getColor(NewsDetailsActivity.this,R.color.black));
+                CustomTabsIntent customTabsIntent = builder.build();
+                customTabsIntent.launchUrl(NewsDetailsActivity.this, Uri.parse(url));
+
+                //i.setData(Uri.parse(url));
+                //startActivity(i);
             }
         });
     }
