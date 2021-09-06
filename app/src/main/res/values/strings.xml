@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GetNews</string>
+    <string name="get_news">Get News</string>
+    <string name="category">Category</string>
+    <string name="news_heading">News Heading</string>
+    <string name="sub_text">sub text</string>
+    <string name="todo">TODO</string>
+</resources>
