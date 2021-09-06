@@ -82,14 +82,21 @@ public class MainActivity extends AppCompatActivity implements CategoryRVAdapter
             @Override
             public void onResponse(Call<NewsModel> call, retrofit2.Response<NewsModel> response) throws NullPointerException{
 
-                    NewsModel newsModal = response.body();
+                    NewsModel newsModel = response.body();
                     loadingPB.setVisibility(View.GONE);
 
-                    ArrayList<Articles> articlesArrayList= newsModal.getArticles();
+                ArrayList<Articles> articlesArrayList = new ArrayList();
+                if(newsModel.getArticles() != null){
                     for (int i = 0; i < articlesArrayList.size(); i++){
-                        articles.add(new Articles(articlesArrayList.get(i).getTitle(), articlesArrayList.get(i).getDescription(), articlesArrayList.get(i).getUrlToImage(), articlesArrayList.get(i).getUrl(), articlesArrayList.get(i).getContent()));
+                        articles.add(new Articles(articlesArrayList.get(i).getTitle(),
+                                articlesArrayList.get(i).getDescription(),
+                                articlesArrayList.get(i).getUrlToImage(),
+                                articlesArrayList.get(i).getUrl(),
+                                articlesArrayList.get(i).getContent()));
                     }
-                    newsRVAapter.notifyDataSetChanged();
+                }
+
+                newsRVAapter.notifyDataSetChanged();
 
 
             }
