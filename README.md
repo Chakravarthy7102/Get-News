@@ -13,3 +13,15 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+# Learnings and Concepts Used
+* Recycler Views
+* Adapters
+* handling API requests
+* fetching data from the Internet
+* Intents
+
+# Tech
+* Retrofit 2 Library for making and handling network calls
+* Glide library for image loading
+* Custom Chrome Tabs implemented for showing full details of a particular news
